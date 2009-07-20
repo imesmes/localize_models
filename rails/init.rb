@@ -1,0 +1,1 @@
+require 'localize_models'

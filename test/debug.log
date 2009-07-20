@@ -1,0 +1,329 @@
+# Logfile created on Mon Jul 20 12:25:53 +0200 2009 by /
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (69.2ms)[0m   [0;1mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (66.2ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (175.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (40.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mMysql::Error: Table 'localize_models_test.languages' doesn't exist: SELECT * FROM `languages` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (74.8ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.5ms)[0m   [0mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.8ms)[0m   [0mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (54.9ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.2ms)[0m   [0;1mDROP TABLE `localize_models`[0m
+  [4;35;1mSQL (83.3ms)[0m   [0mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mDROP TABLE `localize_strings`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (49.6ms)[0m   [0;1mDROP TABLE `localize_texts`[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mLanguage Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;36;1mSQL (42.2ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (38.2ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.8ms)[0m   [0;1mDROP TABLE `localize_models`[0m
+  [4;35;1mSQL (66.6ms)[0m   [0mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mDROP TABLE `localize_strings`[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.2ms)[0m   [0;1mDROP TABLE `localize_texts`[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;35;1mLanguage Load (0.3ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mLanguage Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;36;1mSQL (40.3ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (48.7ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (66.4ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mDROP TABLE `localize_models`[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.8ms)[0m   [0mDROP TABLE `localize_strings`[0m
+  [4;36;1mSQL (75.0ms)[0m   [0;1mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.1ms)[0m   [0;1mDROP TABLE `localize_texts`[0m
+  [4;35;1mSQL (75.0ms)[0m   [0mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.2ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES('This is english title', NULL)[0m
+  [4;35;1mLocalizeModel Load (0.4ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle' AND `localize_models`.`method_name` = 'title') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;35;1mLocalizeModel Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `localize_models`[0m
+  [4;36;1mLocalizeModel Create (0.2ms)[0m   [0;1mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('title', 'LocalizeModelsTest::DummyArticle', 1)[0m
+  [4;35;1mLocalizeString Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `localize_strings`[0m
+  [4;36;1mLocalizeString Create (0.2ms)[0m   [0;1mINSERT INTO `localize_strings` (`localize_model_id`, `language_id`, `translation`) VALUES(1, 1, 'This is spanish title')[0m
+  [4;35;1mSQL (38.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle' AND `localize_models`.`method_name` = 'title') LIMIT 1[0m
+  [4;35;1mLocalizeString Load (0.2ms)[0m   [0mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (52.1ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (49.5ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (83.4ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Catalan', 'ca')[0m
+  [4;36;1mSQL (45.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.2ms)[0m   [0;1mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mDROP TABLE `localize_models`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.7ms)[0m   [0;1mDROP TABLE `localize_strings`[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mDROP TABLE `localize_texts`[0m
+  [4;36;1mSQL (66.5ms)[0m   [0;1mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0mSELECT * FROM `dummy_articles` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Create (0.2ms)[0m   [0mINSERT INTO `dummy_articles` (`title`, `description`) VALUES('This is english title', NULL)[0m
+  [4;36;1mLocalizeModel Load (0.4ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLanguage Load (0.2ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `localize_models`[0m
+  [4;35;1mLocalizeModel Create (0.2ms)[0m   [0mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('title', 'LocalizeModelsTest::DummyArticle', 1)[0m
+  [4;36;1mLocalizeString Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `localize_strings`[0m
+  [4;35;1mLocalizeString Create (0.2ms)[0m   [0mINSERT INTO `localize_strings` (`localize_model_id`, `language_id`, `translation`) VALUES(1, 2, 'This is spanish title')[0m
+  [4;36;1mSQL (35.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;35;1mLocalizeModel Load (0.2ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLocalizeString Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 2) LIMIT 1[0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.1ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLocalizeString Load (0.2ms)[0m   [0mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.5ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (83.4ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.1ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Catalan', 'ca')[0m
+  [4;36;1mSQL (38.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.1ms)[0m   [0;1mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;35;1mSQL (40.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mDROP TABLE `localize_models`[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mDROP TABLE `localize_strings`[0m
+  [4;35;1mSQL (66.6ms)[0m   [0mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mDROP TABLE `localize_texts`[0m
+  [4;36;1mSQL (74.9ms)[0m   [0;1mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.2ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES('This is english title', NULL)[0m
+  [4;35;1mLocalizeModel Load (0.3ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;35;1mLocalizeModel Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `localize_models`[0m
+  [4;36;1mLocalizeModel Create (0.2ms)[0m   [0;1mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('title', 'LocalizeModelsTest::DummyArticle', 1)[0m
+  [4;35;1mLocalizeString Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `localize_strings`[0m
+  [4;36;1mLocalizeString Create (0.2ms)[0m   [0;1mINSERT INTO `localize_strings` (`localize_model_id`, `language_id`, `translation`) VALUES(1, 2, 'This is spanish title')[0m
+  [4;35;1mSQL (30.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLocalizeString Load (0.2ms)[0m   [0mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 2) LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Load (0.1ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLocalizeString Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.1ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES(NULL, 'This is english description')[0m
+  [4;35;1mLocalizeModel Load (0.2ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'description' AND `localize_models`.`object_id` = 2 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Create (0.1ms)[0m   [0mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('description', 'LocalizeModelsTest::DummyArticle', 2)[0m
+  [4;36;1mLocalizeText Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `localize_texts`[0m
+  [4;35;1mLocalizeText Create (0.2ms)[0m   [0mINSERT INTO `localize_texts` (`localize_model_id`, `language_id`, `translation`) VALUES(2, 1, 'This is catalan description')[0m
+  [4;36;1mSQL (36.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (83.0ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (74.9ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.1ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (74.8ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Catalan', 'ca')[0m
+  [4;36;1mSQL (37.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.1ms)[0m   [0;1mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;35;1mSQL (40.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mDROP TABLE `localize_models`[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (74.4ms)[0m   [0;1mDROP TABLE `localize_strings`[0m
+  [4;35;1mSQL (91.5ms)[0m   [0mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (49.4ms)[0m   [0mDROP TABLE `localize_texts`[0m
+  [4;36;1mSQL (91.7ms)[0m   [0;1mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.2ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES('This is english title', NULL)[0m
+  [4;35;1mLocalizeModel Load (0.3ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;35;1mLocalizeModel Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `localize_models`[0m
+  [4;36;1mLocalizeModel Create (0.2ms)[0m   [0;1mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('title', 'LocalizeModelsTest::DummyArticle', 1)[0m
+  [4;35;1mLocalizeString Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `localize_strings`[0m
+  [4;36;1mLocalizeString Create (0.2ms)[0m   [0;1mINSERT INTO `localize_strings` (`localize_model_id`, `language_id`, `translation`) VALUES(1, 2, 'This is spanish title')[0m
+  [4;35;1mSQL (39.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLocalizeString Load (0.2ms)[0m   [0mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 2) LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Load (0.1ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLocalizeString Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.1ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES(NULL, 'This is english description')[0m
+  [4;35;1mLocalizeModel Load (0.2ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'description' AND `localize_models`.`object_id` = 2 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Create (0.1ms)[0m   [0mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('description', 'LocalizeModelsTest::DummyArticle', 2)[0m
+  [4;36;1mLocalizeText Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `localize_texts`[0m
+  [4;35;1mLocalizeText Create (0.2ms)[0m   [0mINSERT INTO `localize_texts` (`localize_model_id`, `language_id`, `translation`) VALUES(2, 1, 'This is catalan description')[0m
+  [4;36;1mSQL (29.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0mSELECT * FROM `dummy_articles` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mDROP TABLE `dummy_articles`[0m
+  [4;35;1mSQL (74.8ms)[0m   [0mCREATE TABLE `dummy_articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `code` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.2ms)[0m   [0mINSERT INTO `languages` (`name`, `code`) VALUES('Catalan', 'ca')[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.2ms)[0m   [0;1mINSERT INTO `languages` (`name`, `code`) VALUES('Spanish', 'es')[0m
+  [4;35;1mSQL (40.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mDROP TABLE `localize_models`[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mCREATE TABLE `localize_models` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `object_id` int(11), `model_name` varchar(255), `method_name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.1ms)[0m   [0;1mDROP TABLE `localize_strings`[0m
+  [4;35;1mSQL (83.2ms)[0m   [0mCREATE TABLE `localize_strings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (49.6ms)[0m   [0mDROP TABLE `localize_texts`[0m
+  [4;36;1mSQL (83.2ms)[0m   [0;1mCREATE TABLE `localize_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `localize_model_id` int(11), `language_id` int(11), `translation` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `dummy_articles`[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` [0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.2ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES('This is english title', NULL)[0m
+  [4;35;1mLocalizeModel Load (0.3ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.2ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;35;1mLocalizeModel Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `localize_models`[0m
+  [4;36;1mLocalizeModel Create (0.2ms)[0m   [0;1mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('title', 'LocalizeModelsTest::DummyArticle', 1)[0m
+  [4;35;1mLocalizeString Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `localize_strings`[0m
+  [4;36;1mLocalizeString Create (0.2ms)[0m   [0;1mINSERT INTO `localize_strings` (`localize_model_id`, `language_id`, `translation`) VALUES(1, 2, 'This is spanish title')[0m
+  [4;35;1mSQL (47.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0;1mSELECT * FROM `dummy_articles` WHERE (`dummy_articles`.`id` = 1) [0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLocalizeString Load (0.2ms)[0m   [0mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 2) LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Load (0.1ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'title' AND `localize_models`.`object_id` = 1 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLocalizeString Load (0.2ms)[0m   [0;1mSELECT * FROM `localize_strings` WHERE (`localize_strings`.`localize_model_id` = 1 AND `localize_strings`.`language_id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocalizeModelsTest::DummyArticle Create (0.1ms)[0m   [0;1mINSERT INTO `dummy_articles` (`title`, `description`) VALUES(NULL, 'This is english description')[0m
+  [4;35;1mLocalizeModel Load (0.2ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'description' AND `localize_models`.`object_id` = 2 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Create (0.1ms)[0m   [0mINSERT INTO `localize_models` (`method_name`, `model_name`, `object_id`) VALUES('description', 'LocalizeModelsTest::DummyArticle', 2)[0m
+  [4;36;1mLocalizeText Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `localize_texts`[0m
+  [4;35;1mLocalizeText Create (0.2ms)[0m   [0mINSERT INTO `localize_texts` (`localize_model_id`, `language_id`, `translation`) VALUES(2, 1, 'This is catalan description')[0m
+  [4;36;1mSQL (36.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLocalizeModelsTest::DummyArticle Load (0.2ms)[0m   [0mSELECT * FROM `dummy_articles` WHERE (`dummy_articles`.`id` = 2) [0m
+  [4;36;1mLanguage Load (0.1ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`code` = 'ca') LIMIT 1[0m
+  [4;35;1mLocalizeModel Load (0.2ms)[0m   [0mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'description' AND `localize_models`.`object_id` = 2 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;36;1mLocalizeText Load (0.5ms)[0m   [0;1mSELECT * FROM `localize_texts` WHERE (`localize_texts`.`localize_model_id` = 2 AND `localize_texts`.`language_id` = 1) LIMIT 1[0m
+  [4;35;1mLanguage Load (0.1ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`code` = 'es') LIMIT 1[0m
+  [4;36;1mLocalizeModel Load (0.1ms)[0m   [0;1mSELECT * FROM `localize_models` WHERE (`localize_models`.`method_name` = 'description' AND `localize_models`.`object_id` = 2 AND `localize_models`.`model_name` = 'LocalizeModelsTest::DummyArticle') LIMIT 1[0m
+  [4;35;1mLocalizeText Load (0.2ms)[0m   [0mSELECT * FROM `localize_texts` WHERE (`localize_texts`.`localize_model_id` = 2 AND `localize_texts`.`language_id` = 2) LIMIT 1[0m

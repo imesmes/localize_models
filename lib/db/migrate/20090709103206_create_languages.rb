@@ -4,9 +4,6 @@ class CreateLanguages < ActiveRecord::Migration
       t.string :name
       t.string :code
     end
-    Language.create(:name => 'Català', :code => 'ca')
-    Language.create(:name => 'Castellano', :code => 'es')
-    Language.create(:name => 'English', :code => 'en')
   end
 
   def self.down
