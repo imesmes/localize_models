@@ -1,7 +1,7 @@
 LocalizeModels
 ==============
 
-This plugin allows usage of multiple languages in models data withouth touching database schema. 
+This plugin allows usage of multiple languages in models data without touching database schema. 
 
 -- Installation:
 
