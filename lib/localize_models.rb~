@@ -15,7 +15,8 @@ class ActiveRecord::Base
     def localize(*attribute_names)
       attribute_names.each do |attribute_name|
         type = self.columns_hash["#{attribute_name}"].type
-        Language.all.each do |language|
+        languages = Language.all.delete_if { |l| l[:code] == I18n.default_locale.to_s }
+        languages.each do |language|
           class_eval %{
             def #{attribute_name}_#{language.code}
               if @localize_#{type.to_s}.nil?
@@ -28,12 +29,12 @@ class ActiveRecord::Base
                   {:model_name => self.class.name, :method_name => :#{attribute_name}.to_s, 
                   :object_id => self.id})
                 if localize_model.nil?
-                  @localize_#{type.to_s}[:#{attribute_name}][:#{language.code}] = ''
+                  @localize_#{type.to_s}[:#{attribute_name}][:#{language.code}] = nil
                 else
                   localize_#{type.to_s} = Localize#{type.to_s.capitalize}.find(:first, :conditions => 
                     {:localize_model_id => localize_model.id, :language_id => language.id})
                   if localize_#{type.to_s}.nil?
-                    @localize_#{type.to_s}[:#{attribute_name}][:#{language.code}] = ''
+                    @localize_#{type.to_s}[:#{attribute_name}][:#{language.code}] = nil
                   else
                     @localize_#{type.to_s}[:#{attribute_name}][:#{language.code}] = localize_#{type.to_s}.translation
                   end

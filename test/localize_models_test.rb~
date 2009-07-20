@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/test_helper.rb' 
 
 class LocalizeModelsTest < ActiveSupport::TestCase
-  load_schema
+  test_schema
 
   class DummyArticle < ActiveRecord::Base
   end
