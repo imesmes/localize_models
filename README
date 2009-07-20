@@ -3,5 +3,10 @@ LocalizeModels
 
 This plugin is in development.
 
+- Usage:
+
+class Article < ActiveRecord::Base
+	localize :title
+end
 
 Copyright (c) 2009 [David Morcillo Muñoz], released under the MIT license
