@@ -1,7 +1,0 @@
-mysql:
-  :adapter: mysql
-  :host: localhost
-  :username: root
-  :password: 
-  :database: localize_models_plugin_test
-
