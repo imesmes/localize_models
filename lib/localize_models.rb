@@ -17,8 +17,13 @@ class ActiveRecord::Base
         type = self.columns_hash["#{attribute_name}"].type
         languages = Language.all.delete_if { |l| l[:code] == I18n.default_locale.to_s }
         class_eval %{
-          alias #{attribute_name}_#{I18n.default_locale.to_s} #{attribute_name}
-          alias #{attribute_name}_#{I18n.default_locale.to_s}= #{attribute_name}=
+          def #{attribute_name}_#{I18n.default_locale.to_s}
+            #{attribute_name}
+          end
+
+          def #{attribute_name}_#{I18n.default_locale.to_s}=(param)
+            #{attribute_name}=(param)
+          end
         }
         languages.each do |language|
           class_eval %{
