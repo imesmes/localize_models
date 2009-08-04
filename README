@@ -24,10 +24,14 @@ class DummyArticle < ActiveRecord::Base
 end
 
 If we have Catalan and Spanish languages (with codes ca and es) and the default locale is English, the plugin generates the following methods: 
+* 'title_en' (alias of title)
+* 'title_en=' (alias of title=)
 * 'title_ca' 
 * 'title_ca='
 * 'title_es' 
 * 'title_es='
+* 'description_en' (alias of description)
+* 'description_en=' (alias of description=)
 * 'description_ca'
 * 'description_ca='
 * 'description_es'
