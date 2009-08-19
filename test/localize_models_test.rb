@@ -32,4 +32,18 @@ class LocalizeModelsTest < Test::Unit::TestCase
     assert_equal a2.description_ca, "This is catalan description"
     assert_nil a2.description_es
   end
+
+  def test_purge
+    a1 = DummyArticle.new
+    a1.title = 'This is english title'
+    a1.title_es = 'This is spanish title'
+    a1.description = "This is english description"
+    a1.description_ca = "This is catalan description"
+    a1.save    
+    a1.destroy
+    assert_equal 0, DummyArticle.count
+    assert_equal 0, LocalizeString.count
+    assert_equal 0, LocalizeText.count
+    assert_equal 0, LocalizeModel.count
+  end
 end

@@ -63,7 +63,17 @@ class ActiveRecord::Base
        end
 
        class_eval %{      
+         before_destroy :purge_localize
          after_save :save_localize
+
+         def purge_localize
+           localize_models = LocalizeModel.find_all_by_object_id(self.id)
+           localize_models.each do |lm|
+             LocalizeString.find_all_by_localize_model_id(lm.id).each { |ls| ls.destroy }
+             LocalizeText.find_all_by_localize_model_id(lm.id).each { |lt| lt.destroy }
+             lm.destroy
+           end
+         end
 
          def save_localize
            unless @localize_string.nil?
