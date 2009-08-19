@@ -1,10 +1,6 @@
 LocalizeModels
 ==============
 
-----------
-Bug found: If I delete a model I must destroy Localize* rows. 
-----------
-
 This plugin allows usage of multiple languages in models data without touching database schema. 
 
 -- Installation:
