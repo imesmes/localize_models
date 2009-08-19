@@ -67,7 +67,7 @@ class ActiveRecord::Base
          after_save :save_localize
 
          def purge_localize
-           localize_models = LocalizeModel.find_all_by_object_id(self.id)
+           localize_models = LocalizeModel.find_all_by_object_id_and_model_name(self.id,self.class.name)
            localize_models.each do |lm|
              LocalizeString.find_all_by_localize_model_id(lm.id).each { |ls| ls.destroy }
              LocalizeText.find_all_by_localize_model_id(lm.id).each { |lt| lt.destroy }
