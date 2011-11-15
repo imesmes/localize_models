@@ -1,11 +1,10 @@
-LocalizeModels
-==============
+h1. LocalizeModels "!http://stillmaintained.com/imesmes/localize_models.png!":http://stillmaintained.com/imesmes/localize_models
 
 This plugin allows usage of multiple languages in models data without touching database schema. 
 
--- Installation:
+h2. Installation
 
-$ script/plugin install git://github.com/imesmes/localize_models.git
+bc. $ script/plugin install git://github.com/imesmes/localize_models.git
 $ rake db:migrate:localize_models
 
 Database migration will generate four tables:
@@ -14,12 +13,12 @@ Database migration will generate four tables:
 * localize_strings
 * localize_texts
 
--- Usage:
+h2. Usage
 
-Language.create :name => 'Catalan', :code => 'ca'
+bc. Language.create :name => 'Catalan', :code => 'ca'
 Language.create :name => 'Spanish', :code => 'es'
 
-class DummyArticle < ActiveRecord::Base
+bc. class DummyArticle < ActiveRecord::Base
 	localize :title, :description
 end
 
@@ -37,11 +36,11 @@ If we have Catalan and Spanish languages (with codes ca and es) and the default 
 * 'description_es'
 * 'description_es='
 
--- Testing:
+h2. Testing
 
 We must have a test database called 'localize_models_test'
 
-$ cd vendor/plugins/localize_models
+bc. $ cd vendor/plugins/localize_models
 $ rake DB=mysql
 
 Copyright (c) 2009 [David Morcillo Muñoz], released under the MIT license
